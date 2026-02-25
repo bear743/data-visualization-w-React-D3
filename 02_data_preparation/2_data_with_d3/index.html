@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading and Parsing CSV Data</title>
+    <script src="https://unpkg.com/d3@7.9.0/dist/d3.min.js"></script>
+    <style>
+        pre {
+            font-size: 7em;
+        }
+    </style>
+</head>
+<body>
+    <pre id="messsage"></pre>
+    <script>
+        const csvUrl ="https://gist.githubusercontent.com/bear743/1d1285e5326d54bac06bdab9c8003157/raw/css_named_colors.csv";
+        
+        d3.csv(csvUrl).then((data) => {
+            const text = d3.csvFormat(data)
+            let message = "";
+            message += Math.round(text.length / 1024) + " kB\n";
+            message += data.length + " rows\n";
+            message += data.columns.length + " columns\n";
+            document.getElementById("messsage").textContent = message;
+        })
+
+
+        // const fetchText = async (url) => {
+        //     const response = await fetch(url);
+        //     return await response.text();
+        // }
+
+        // fetchText(csvUrl).then(text => {
+        //     const data = d3.csvParse(text);
+        //     let message = "";
+        //     message += Math.round(text.length / 1024) + " kB\n";
+        //     message += data.length + " rows\n";
+        //     message += data.columns.length + " columns\n";
+        //     document.getElementById("messsage").textContent = message;
+        // })
+    </script>
+</body>
+</html>
