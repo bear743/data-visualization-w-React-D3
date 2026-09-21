@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Map</title>
+
+    <link href="https://fonts.font.im/css?family=Poppins" rel="stylesheet">
+
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        font-family: 'Poppins', sans-serif;
+      }
+      .marks .land {
+        fill: #137B80;
+        stroke: #C0C0BB;
+      }
+      .marks .sphere {
+        fill: #ebebeb;
+      }
+      .marks .interiors {
+        fill: none;
+        stroke: #339498;
+      }
+      .marks .graticules {
+        fill: none;
+        stroke: #dadada;
+      }
+      .marks circle {
+        fill: #232424;
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
